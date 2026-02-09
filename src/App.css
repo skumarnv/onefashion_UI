@@ -1,8 +1,12 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: center; */
+}
+
+:root {
+  --app-gradient: radial-gradient(circle at 10% 0, #fefefe 0%, #2943a3 25%, #20346d 60%, #101634 100%);
 }
 
 .logo {

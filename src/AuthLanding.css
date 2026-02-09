@@ -1,0 +1,344 @@
+/* src/AuthLanding.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Outer background */
+.auth-root {
+  min-height: 100vh;
+  background: #111f4a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Card */
+.auth-card {
+  max-width: 1100px;
+  width: 100%;
+  height: 520px;
+  background: #182754;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 24px 60px rgba(226, 222, 222, 0.45);
+}
+
+/* LEFT PANEL */
+.auth-left {
+  width: 32%;
+  background: #ffffff;
+  padding: 8px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1f3dd1, #2c8bd9);
+}
+
+.auth-logo-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-weight: 700;
+}
+
+.logo-sub {
+  font-weight: 500;
+  color: #777;
+}
+
+/* Avatar */
+.auth-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0 24px;
+}
+
+.auth-avatar-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #eef2ff;
+  background: linear-gradient(135deg, #1f3dd1, #5c7df5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-avatar-icon {
+  font-size: 40px;
+  color: #fff;
+}
+
+/* Form */
+.auth-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #777;
+}
+
+.auth-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border-radius: 20px;
+  border: 1px solid #e1e4f3;
+  font-size: 13px;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+
+.auth-input:focus {
+  border-color: #3856f0;
+  box-shadow: 0 0 0 2px rgba(56, 86, 240, 0.16);
+}
+
+/* Options row */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.auth-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #666;
+}
+
+.auth-remember input {
+  accent-color: #3856f0;
+}
+
+.auth-forgot {
+  border: none;
+  background: none;
+  font-size: 11px;
+  color: #3856f0;
+  cursor: pointer;
+}
+
+/* Button */
+.auth-btn {
+  margin-top: 10px;
+  padding: 10px 0;
+  border-radius: 20px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  background: linear-gradient(135deg, #1f3dd1, #5c7df5);
+  color: #fff;
+  box-shadow: 0 5px 6px rgba(31, 61, 209, 0.5);
+}
+
+/* Dots */
+.auth-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #d1d4e5;
+  opacity: 0.6;
+}
+
+.dot.active {
+  width: 16px;
+  opacity: 1;
+}
+
+/* RIGHT PANEL */
+.auth-right {
+  flex: 1;
+  position: relative;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  color: #f7f8ff;
+  background: radial-gradient(circle at 10% 0, #fefefe 0%, #cfd9ff 25%, #20346d 60%, #101634 100%);
+}
+
+/* Top nav */
+.auth-right-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-link {
+  border: none;
+  background: transparent;
+  color: #3856f0;;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.nav-link.active {
+  font-weight: 600;
+  opacity: 1;
+}
+
+.nav-signin {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  background: rgba(0, 0, 0, 0.08);
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Main text */
+.auth-right-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* max-width: 360px; */
+  z-index: 2;
+}
+
+.welcome-title {
+  font-size: 46px;
+  margin: 0 0 12px;
+}
+
+.welcome-text {
+  font-size: 13px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .auth-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .auth-left {
+    width: 100%;
+  }
+
+  .auth-right {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Title under avatar */
+.auth-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 12px;
+  text-align: center;
+  color: #1e2550;
+}
+
+/* Outer wrapper so we can hide overflow while sliding */
+.auth-form-outer {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+/* Slider with 2 panels next to each other */
+.auth-form-slider {
+  display: flex;
+  width: 200%;              /* two panels of 100% each */
+  transform: translateX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.6s ease,
+              transform-origin 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* each form panel */
+.auth-panel {
+  width: 50%;
+  padding-right: 10px;  /* little space at right */
+}
+
+/* when signup active -> slide like a book page */
+.auth-form-slider--signup {
+  transform: translateX(-50%) rotateY(-8deg);
+  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.18);
+}
+
+/* make auth-form use full height nicely */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
