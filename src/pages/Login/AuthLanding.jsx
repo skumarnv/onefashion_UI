@@ -1,17 +1,52 @@
-// src/AuthLanding.jsx
+// src/pages/Login/AuthLanding.jsx
 import React, { useState } from "react";
-import "../../AuthLanding.css";
+import "./AuthLanding.css";
 
-const AuthLanding = () => {
+const AuthLanding = ({ onLogin }) => {
   const [mode, setMode] = useState("signin"); // "signin" | "signup"
+  
+  // Controlled form state
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [signupPassword, setSignupPassword] = useState("");
+  const [error, setError] = useState("");
 
   const toggleMode = () => {
+    setError("");
     setMode((prev) => (prev === "signin" ? "signup" : "signin"));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // TODO: handle login / signup submit here
+    setError("");
+
+    if (mode === "signin") {
+      if (!username || !password) {
+        setError("Please enter both username and password.");
+        return;
+      }
+
+      // Dummy credentials check: admin / password123
+      if (username === "admin" && password === "password123") {
+        if (onLogin) {
+          onLogin({ name: "Admin User", username: username });
+        }
+      } else {
+        setError("Invalid credentials! Try admin / password123");
+      }
+    } else {
+      if (!fullName || !email || !signupPassword) {
+        setError("Please fill in all registration fields.");
+        return;
+      }
+
+      // Successful dummy sign up automatically logs the user in
+      if (onLogin) {
+        onLogin({ name: fullName, username: email });
+      }
+    }
   };
 
   return (
@@ -19,15 +54,6 @@ const AuthLanding = () => {
       <div className="auth-card">
         {/* LEFT PANEL */}
         <div className="auth-left">
-          {/* Logo */}
-          {/* <div className="auth-logo">
-            <div className="auth-logo-icon" />
-            <div className="auth-logo-text">
-              <span className="logo-main">Template</span>
-              <span className="logo-sub">Design</span>
-            </div>
-          </div> */}
-
           {/* Avatar */}
           <div className="auth-avatar">
             <div className="auth-avatar-circle">
@@ -39,6 +65,22 @@ const AuthLanding = () => {
           <h2 className="auth-title">
             {mode === "signin" ? "Sign in to your account" : "Create a new account"}
           </h2>
+
+          {/* Error Message Alert */}
+          {error && (
+            <div style={{
+              color: "#ef4444",
+              fontSize: "12px",
+              textAlign: "center",
+              marginBottom: "12px",
+              padding: "6px",
+              background: "rgba(239, 68, 68, 0.1)",
+              borderRadius: "8px",
+              fontWeight: "500"
+            }}>
+              {error}
+            </div>
+          )}
 
           {/* SLIDER WRAPPER */}
           <div className="auth-form-outer">
@@ -55,8 +97,10 @@ const AuthLanding = () => {
                     <span className="auth-input-icon">@</span>
                     <input
                       type="text"
-                      placeholder="Enter username"
+                      placeholder="Enter username (admin)"
                       className="auth-input"
+                      value={username}
+                      onChange={(e) => setUsername(e.target.value)}
                     />
                   </div>
                 </div>
@@ -67,8 +111,10 @@ const AuthLanding = () => {
                     <span className="auth-input-icon">••</span>
                     <input
                       type="password"
-                      placeholder="Enter password"
+                      placeholder="Enter password (password123)"
                       className="auth-input"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                   </div>
                 </div>
@@ -98,6 +144,8 @@ const AuthLanding = () => {
                       type="text"
                       placeholder="Enter full name"
                       className="auth-input"
+                      value={fullName}
+                      onChange={(e) => setFullName(e.target.value)}
                     />
                   </div>
                 </div>
@@ -110,6 +158,8 @@ const AuthLanding = () => {
                       type="email"
                       placeholder="Enter email"
                       className="auth-input"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
@@ -122,6 +172,8 @@ const AuthLanding = () => {
                       type="password"
                       placeholder="Create password"
                       className="auth-input"
+                      value={signupPassword}
+                      onChange={(e) => setSignupPassword(e.target.value)}
                     />
                   </div>
                 </div>

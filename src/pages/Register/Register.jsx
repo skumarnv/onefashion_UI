@@ -4,7 +4,7 @@ import {
   Grid, TextField, Typography, Link, IconButton,
   InputAdornment, Paper,
 } from "@mui/material";
-import TextBox from "../../components/textbox/textbox";
+import TextBox from "../../components/TextBox/TextBox";
 import backgroundImage from "../../assets/jpg/Jewlly.jpg"; // Adjust the path as necessary
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import login from "../../assets/png/login.png"; // Adjust the path as necessary
@@ -128,87 +128,6 @@ export default function SignupPage() {
               </Button>
             </Grid>
           </Grid>
-          {/* <Box component="form" noValidate sx={{ mt: 3 }}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextBox name="firstName" fullWidth label="First Name" autoFocus />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextBox name="lastName" fullWidth label="Last Name" />
-              </Grid>
-              <Grid item xs={12}>
-                <TextBox type={"password"} variant={"standard"} name="email" fullWidth label="Email" />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  name="password"
-                  fullWidth
-                  label="Password"
-                  type={showPassword ? "text" : "password"}
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton onClick={handleClickShowPassword} edge="end">
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="agree" color="primary" defaultChecked />}
-                  label={
-                    <Typography variant="body2">
-                      I agree to the <Link href="#">Terms & Conditions</Link>
-                    </Typography>
-                  }
-                />
-              </Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2, backgroundColor: "#7e57c2" }}
-            >
-              Create account
-            </Button>
-            <Grid container spacing={2} alignItems="center" sx={{ my: 2 }}>
-              <Grid item xs>
-                <Box sx={{ height: 1, bgcolor: "grey.300" }}></Box>
-              </Grid>
-              <Grid item>
-                <Typography variant="body2">Or register with</Typography>
-              </Grid>
-              <Grid item xs>
-                <Box sx={{ height: 1, bgcolor: "grey.300" }}></Box>
-              </Grid>
-            </Grid>
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Button
-                  fullWidth
-                  variant="outlined"
-                  startIcon={<GoogleIcon />}
-                  sx={{ textTransform: "none" }}
-                >
-                  Google
-                </Button>
-              </Grid>
-              <Grid item xs={6}>
-                <Button
-                  fullWidth
-                  variant="outlined"
-                  startIcon={<AppleIcon />}
-                  sx={{ textTransform: "none" }}
-                >
-                  Apple
-                </Button>
-              </Grid>
-            </Grid>
-          </Box> */}
         </Box>
       </Grid>
     </Grid>

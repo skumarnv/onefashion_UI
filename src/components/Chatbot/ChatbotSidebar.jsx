@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ChatbotContext } from "../chatbotcontext/chatbotcontext.jsx";
+import { ChatbotContext } from "../../context/ChatbotContext.jsx";
 
 const Sidebar = () => {
   const { setOpen } = useContext(ChatbotContext);
@@ -10,3 +10,5 @@ const Sidebar = () => {
     </li>
   );
 };
+
+export default Sidebar;
